@@ -2,17 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+//There is no front-end, feel free to build your own !
+Route::redirect('/', 'login');
 
-Route::get('/', function () {
-    return view('welcome');
+//All your dashboard's routes going to be here.
+Route::group([
+    'as'         => 'panel.',
+    'middleware' => [
+        'verified',
+    ],
+], static function () {
+    Route::view('dashboard', 'pages.panel.dashboard')->name('dashboard');
 });

@@ -31,6 +31,12 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        Fortify::loginView(static fn() => view('pages.auth.login'));
+        Fortify::registerView(static fn() => view('pages.auth.register'));
+        Fortify::verifyEmailView(static fn() => view('pages.auth.verify-email'));
+        Fortify::requestPasswordResetLinkView(static fn() => view('pages.auth.request-password-reset'));
+        Fortify::resetPasswordView(static fn() => view('pages.auth.reset-password'));
+
         Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
