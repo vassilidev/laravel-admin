@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Laravel 9 Admin Starter Kit"/>
     <meta name="author" content="Vassili JOFFROY (@vassilidev)"/>
-    <title>@yield('title')</title>
+    <title>@yield('title', config('app.name'))</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet"/>
-    <script data-search-pseudo-elements defer
-            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
-            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     @stack('css')
 </head>
 <body class="nav-fixed">
@@ -26,8 +26,8 @@
         @include('layouts.panel.dashboard.footer')
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        crossorigin="anonymous"></script>
+@include('sweetalert::alert')
+<script src="{{ asset('vendor/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
 @stack('js')
 </body>

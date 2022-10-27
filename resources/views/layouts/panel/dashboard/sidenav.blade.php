@@ -1,7 +1,12 @@
 <nav class="sidenav shadow-right sidenav-light">
     <div class="sidenav-menu">
         <div class="nav accordion" id="accordionSidenav">
-
+            <a class="nav-link" href="{{ route('panel.dashboard') }}">
+                <div class="nav-link-icon">
+                    <i class="fas fa-house"></i>
+                </div>
+                {{ __('Home') }}
+            </a>
         </div>
     </div>
 
