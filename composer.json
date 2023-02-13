@@ -13,6 +13,7 @@
     "laravel/fortify": "^1.13",
     "laravel/framework": "^9.19",
     "laravel/sanctum": "^3.0",
+    "laravel/telescope": "^4.13",
     "laravel/tinker": "^2.7",
     "realrashid/sweet-alert": "^5.1"
   },
